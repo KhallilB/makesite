@@ -1,0 +1,20 @@
+<html>
+  <head>
+    <title>Go To-Do list</title>
+  </head>
+  <body>
+    <p>
+      To-Do list for {{ .User }}: 
+    </p>
+    <table>
+        {{ with .List }}
+          {{ range . }}
+            <tr>
+                  <td>{{ .Name }}</td>
+                  <td>Done?: {{ if .Done }}Yes{{ else }}No{{ end }}</td>
+            </tr>
+          {{ end }}
+        {{ end }}
+    </table>
+  </body>
+</html>
